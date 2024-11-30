@@ -21,12 +21,25 @@
         <h2><%= dongeng.title %></h2>
         <div class="slideshow">
             <img id="slide-image" src="<%= dongeng.slides[0].image %>" alt="<%= dongeng.title %>">
-            <audio id="audio" src="<%= dongeng.slides[0].audio %>" autoplay></audio>
-            <button id="next-button">Selanjutnya</button>
+            <audio id="audio" src="<%= dongeng.slides[0].audio %>"></audio>
+            <button id="play-button">Play Audio</button>
+            <button id="next-button" style="display: none;">Selanjutnya</button>
         </div>
-        <div id="other-dongeng" style="display: none;">
+        
+        <div id="other-dongeng">
             <h3>Dongeng Lainnya</h3>
-            <!-- Tambahkan tautan ke dongeng lainnya di sini -->
+            <div class="dongeng-list">
+                <% dongengs.forEach((otherDongeng, index) => { %>
+                    <% if (otherDongeng.title !== dongeng.title) { %> <!-- Pastikan tidak menampilkan dongeng yang sama -->
+                        <div class="dongeng-item">
+                            <a href="/dongeng/<%= index %>">
+                                <img src="<%= otherDongeng.cover %>" alt="<%= otherDongeng.title %>">
+                                <h3><%= otherDongeng.title %></h3>
+                            </a>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div>
         </div>
     </section>
     <script>
@@ -36,18 +49,38 @@
         const audioElement = document.getElementById('audio');
         const slideImage = document.getElementById('slide-image');
         const nextButton = document.getElementById('next-button');
+        const playButton = document.getElementById('play-button');
         const otherDongeng = document.getElementById('other-dongeng');
 
         function showSlide(index) {
             if (index < slides.length) {
                 slideImage.src = slides[index].image;
                 audioElement.src = slides[index].audio;
-                audioElement.play();
                 currentSlide = index;
+
+                // Tampilkan tombol play hanya di slide pertama
+                if (index === 0) {
+                    playButton.style.display = 'block'; // Tampilkan tombol play di slide pertama
+                    nextButton.style.display = 'none'; // Sembunyikan tombol selanjutnya
+                } else {
+                    playButton.style.display = 'none'; // Sembunyikan tombol play di slide lainnya
+                    nextButton.style.display = 'block'; // Tampilkan tombol selanjutnya
+                }
+
+                // Autoplay audio untuk slide kedua dan seterusnya
+                if (index > 0) {
+                    audioElement.play(); // Autoplay audio untuk slide kedua dan seterusnya
+                }
             } else {
                 otherDongeng.style.display = 'block';
             }
         }
+
+        playButton.addEventListener('click', () => {
+            audioElement.play();
+            playButton.style.display = 'none'; // Sembunyikan tombol play setelah diputar
+            nextButton.style.display = 'block'; // Tampilkan tombol selanjutnya
+        });
 
         nextButton.addEventListener('click', () => {
             showSlide(currentSlide + 1);

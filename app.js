@@ -50,9 +50,10 @@ app.get('/about', (req, res) => {
     res.render('about'); // Render halaman about.ejs
 });
 
+// Rute untuk halaman dongeng
 app.get('/dongeng/:id', (req, res) => {
   const dongeng = dongengs[req.params.id];
-  res.render('dongeng', { dongeng });
+  res.render('dongeng', { dongeng, dongengs }); // Kirimkan juga array dongengs
 });
 
 // Start server
