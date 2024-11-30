@@ -100,6 +100,8 @@ h2 {
     position: relative;
     text-align: center;
     margin: 20px 0;
+    max-width: 100%; /* Maksimal lebar container */
+    overflow: hidden; /* Menghindari overflow */
 }
 
 .slideshow img {
