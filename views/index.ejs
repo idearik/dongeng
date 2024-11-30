@@ -26,6 +26,8 @@
                         <img src="<%= dongeng.cover %>" alt="<%= dongeng.title %>">
                         <h3><%= dongeng.title %></h3>
                     </a>
+                    <audio id="audio-<%= index %>" src="<%= dongeng.audio %>"></audio>
+                    <button onclick="document.getElementById('audio-<%= index %>').play()">Play Audio</button>
                 </div>
             <% }) %>
         </div>
