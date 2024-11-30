@@ -1,0 +1,162 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Font yang lebih modern */
+    background-color: #f0f8ff; /* Warna latar belakang yang cerah */
+    color: #333; /* Warna teks */
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    background-color: #ffcc80; /* Warna header yang cerah */
+    padding: 20px 0;
+    border-bottom: 5px solid #ffab40; /* Garis bawah */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #d84315; /* Warna judul */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d84315; /* Warna link */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5722; /* Warna saat hover */
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1976d2; /* Warna subjudul */
+}
+
+.dongeng-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.dongeng-item {
+    margin: 10px;
+    text-align: center;
+    border: 2px solid #ffab40; /* Border cerah */
+    border-radius: 10px; /* Sudut melengkung */
+    overflow: hidden; /* Menghindari overflow */
+    transition: transform 0.3s;
+    background-color: #fff; /* Latar belakang item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+    width: 30%; /* Lebar item 30% dari section */
+    max-width: 250px; /* Maksimal lebar item */
+}
+
+.dongeng-item:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.dongeng-item img {
+    width: 100%; /* Gambar mengisi lebar item */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+}
+
+.dongeng-item h3 {
+    font-size: 1.2em; /* Ukuran font judul dongeng */
+    margin: 10px 0; /* Margin untuk jarak */
+    color: #d84315; /* Warna judul dongeng */
+}
+
+.slideshow {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.slideshow img {
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar kontainer */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+}
+
+#next-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ffab40; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Memastikan tombol berada di tengah */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#next-button:hover {
+    background-color: #ff9800; /* Warna saat hover */
+}
+
+#other-dongeng {
+    margin-top: 20px;
+    display: none; /* Tersembunyi secara default */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Ukuran font lebih kecil di perangkat kecil */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Ukuran font lebih kecil di perangkat kecil */
+    }
+
+    .dongeng-item {
+        width: 100%; /* Lebar item penuh di perangkat kecil */
+        max-width: none; /* Menghilangkan batasan lebar maksimum */
+    }
+
+    .dongeng-item img {
+        width: 100%; /* Ukuran gambar lebih kecil di perangkat kecil */
+        height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    }
+
+    #next-button {
+        width: 100%; /* Tombol lebar penuh di perangkat kecil */
+    }
+
+    .slideshow img {
+        max-width: 100%; /* Memastikan gambar slideshow tidak melebihi lebar kontainer */
+        height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    }
+}

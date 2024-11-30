@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title><%= dongeng.title %></title>
+</head>
+<body>
+    <header>
+        <h1>Dongeng Nusantara</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Beranda</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Populer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2><%= dongeng.title %></h2>
+        <div class="slideshow">
+            <img id="slide-image" src="<%= dongeng.slides[0].image %>" alt="<%= dongeng.title %>">
+            <audio id="audio" src="<%= dongeng.slides[0].audio %>" autoplay></audio>
+            <button id="next-button">Selanjutnya</button>
+        </div>
+        <div id="other-dongeng" style="display: none;">
+            <h3>Dongeng Lainnya</h3>
+            <!-- Tambahkan tautan ke dongeng lainnya di sini -->
+        </div>
+    </section>
+    <script>
+        // Inisialisasi slides di dalam tag script
+        const slides = <%- JSON.stringify(dongeng.slides) %>; // Pastikan ini tidak ada kesalahan
+        let currentSlide = 0;
+        const audioElement = document.getElementById('audio');
+        const slideImage = document.getElementById('slide-image');
+        const nextButton = document.getElementById('next-button');
+        const otherDongeng = document.getElementById('other-dongeng');
+
+        function showSlide(index) {
+            if (index < slides.length) {
+                slideImage.src = slides[index].image;
+                audioElement.src = slides[index].audio;
+                audioElement.play();
+                currentSlide = index;
+            } else {
+                otherDongeng.style.display = 'block';
+            }
+        }
+
+        nextButton.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Autoplay next slide after audio ends
+        audioElement.addEventListener('ended', () => {
+            setTimeout(() => {
+                showSlide(currentSlide + 1);
+            }, 3000); // 3 detik delay
+        });
+
+        // Initial load
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
