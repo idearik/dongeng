@@ -181,3 +181,18 @@ h2 {
         height: auto; /* Tinggi otomatis untuk menjaga proporsi */
     }
 }
+
+.credits {
+    margin-top: 10px;
+    font-size: 0.9em; /* Ukuran font lebih kecil */
+    color: #555; /* Warna teks yang lebih lembut */
+}
+
+.credits a {
+    color: #1976d2; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.credits a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}

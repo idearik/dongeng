@@ -17,6 +17,10 @@ const dongengs = [
     title: "Legenda Timun Mas",
     cover: "/images/Cover1.webp",
     audio: "/audio/kancil.mp3",
+    audioCreditUrl: "https://example.com/audio-creator",
+    audioCreditName: "Audio Creator",
+    illustrationCreditUrl: "https://example.com/illustrator",
+    illustrationCreditName: "Illustrator Name",
     slides: [
       { image: "/images/TA-Image1.webp", audio: "/audio/TA-Audio1.mp3" },
       { image: "/images/TA-Image2.webp", audio: "/audio/TA-Audio2.mp3" },
@@ -29,6 +33,10 @@ const dongengs = [
     title: "Cerita Malin Kundang",
     cover: "/images/Cover2.webp",
     audio: "/audio/kancil.mp3",
+    audioCreditUrl: "https://example.com/audio-creator",
+    audioCreditName: "Audio Creator",
+    illustrationCreditUrl: "https://example.com/illustrator",
+    illustrationCreditName: "Illustrator Name",
     slides: [
       { image: "/images/MK-Image1.webp", audio: "/audio/MK-Audio1.mp3" },
       { image: "/images/MK-Image2.webp", audio: "/audio/MK-Audio2.mp3" },

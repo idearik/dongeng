@@ -12,13 +12,16 @@
         <nav>
             <ul>
                 <li><a href="/">Beranda</a></li>
-                <li><a href="#">Tentang</a></li>
+                <li><a href="/about">Tentang</a></li>
                 <li><a href="#">Populer</a></li>
             </ul>
         </nav>
     </header>
     <section>
         <h2><%= dongeng.title %></h2>
+        <div class="credits">
+            Credit - Audio by <a href="<%= dongeng.audioCreditUrl %>" target="_blank"><%= dongeng.audioCreditName %></a> | Illustration by <a href="<%= dongeng.illustrationCreditUrl %>" target="_blank"><%= dongeng.illustrationCreditName %></a>
+        </div>
         <div class="slideshow">
             <img id="slide-image" src="<%= dongeng.slides[0].image %>" alt="<%= dongeng.title %>">
             <audio id="audio" src="<%= dongeng.slides[0].audio %>"></audio>
