@@ -45,6 +45,24 @@ const dongengs = [
       { image: "/images/MK-Image5.webp", audio: "/audio/MK-Audio5.mp3" }
     ]
   },
+  {
+    title: "Si Kancil & Buaya",
+    cover: "/images/KancilCover.webp",
+    audio: "/audio/kancil.mp3",
+    audioCreditUrl: "https://www.instagram.com/valentinangeliq/",
+    audioCreditName: "Valentina Angelique",
+    illustrationCreditUrl: "https://example.com/illustrator",
+    illustrationCreditName: "Illustrator Name",
+    slides: [
+      { image: "/images/Kancil1.webp", audio: "/audio/Kancil1.m4a" },
+      { image: "/images/Kancil2.webp", audio: "/audio/Kancil2.m4a" },
+      { image: "/images/Kancil3.webp", audio: "/audio/Kancil3.m4a" },
+      { image: "/images/Kancil4.webp", audio: "/audio/Kancil4.m4a" },
+      { image: "/images/Kancil5.webp", audio: "/audio/Kancil5.m4a" },
+      { image: "/images/Kancil6.webp", audio: "/audio/Kancil6.m4a" },
+      { image: "/images/Kancil7.webp", audio: "/audio/Kancil7.m4a" }
+    ]
+  },
   // Add more dongengs here
 ];
 
